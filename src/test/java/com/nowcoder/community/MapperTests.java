@@ -2,8 +2,8 @@ package com.nowcoder.community;
 
 import com.nowcoder.community.dao.DiscussPostMapper;
 import com.nowcoder.community.dao.UserMapper;
-import com.nowcoder.community.model.DiscussPost;
-import com.nowcoder.community.model.User;
+import com.nowcoder.community.entity.DiscussPost;
+import com.nowcoder.community.entity.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

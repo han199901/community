@@ -1,4 +1,4 @@
-package com.nowcoder.community.model;
+package com.nowcoder.community.entity;
 
 import java.util.Date;
 
