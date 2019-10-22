@@ -14,7 +14,7 @@ public class AlphaController {
 
     @RequestMapping("/hello")
     @ResponseBody
-    public String testUser() {
+    public String sayHello() {
         return "hello springboot";
     }
 
