@@ -70,7 +70,7 @@
 							<input type="text"
 								   th:class="|form-control ${usernameMsg!=null?'is-invalid':''}|"
 								   th:value="${param.username}"
-								   id="username" name="username" placeholder="请输入您的账号!" required>
+								   id="username" name="username" placeholder="请输入您的账号" required>
 							<div class="invalid-feedback" th:text="${usernameMsg}">
 								该账号不存在!
 							</div>
@@ -82,7 +82,7 @@
 							<input type="password"
 								   th:class="|form-control ${passwordMsg!=null?'is-invalid':''}|"
 								   th:value="${param.password}"
-								   id="password" name="password" placeholder="请输入您的密码!" required>
+								   id="password" name="password" placeholder="请输入您的密码" required>
 							<div class="invalid-feedback" th:text="${passwordMsg}">
 								密码长度不能小于8位!
 							</div>
@@ -93,7 +93,7 @@
 						<div class="col-sm-6">
 							<input type="text"
 								   th:class="|form-control ${codeMsg!=null?'is-invalid':''}|"
-								   id="verifycode" name="code" placeholder="请输入验证码!">
+								   id="verifycode" name="code" placeholder="请输入验证码">
 							<div class="invalid-feedback" th:text="${codeMsg}">
 								验证码不正确!
 							</div>
