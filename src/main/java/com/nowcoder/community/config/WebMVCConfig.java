@@ -1,5 +1,6 @@
 package com.nowcoder.community.config;
 
+import com.nowcoder.community.controller.interceptor.LoginRequiredInterceptor;
 import com.nowcoder.community.controller.interceptor.LoginTicketInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
@@ -16,6 +17,9 @@ public class WebMVCConfig implements WebMvcConfigurer {
     @Autowired
     private LoginTicketInterceptor loginTicketInterceptor;
 
+    @Autowired
+    private LoginRequiredInterceptor loginRequiredInterceptor;
+
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
@@ -25,5 +29,10 @@ public class WebMVCConfig implements WebMvcConfigurer {
                 // "/**/*.css": static路径下的任意文件夹下的任意css文件
                 .excludePathPatterns("/**/*.css", "/**/*.js", "/**/*.png", "/**/*.jpg", "/**/*.jpeg");
                 // .addPathPatterns()增加需要拦截的路径
+
+        // 添加@LoginRequired注解的方法已经完成拦截器的注册, 无需.addPathPatterns()增加需要拦截的路径
+        // 在这里注册是为了不拦截静态资源
+        registry.addInterceptor(loginRequiredInterceptor)
+                .excludePathPatterns("/**/*.css", "/**/*.js", "/**/*.png", "/**/*.jpg", "/**/*.jpeg");
     }
 }

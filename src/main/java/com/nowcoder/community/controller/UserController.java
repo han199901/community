@@ -1,5 +1,6 @@
 package com.nowcoder.community.controller;
 
+import com.nowcoder.community.annotation.LoginRequired;
 import com.nowcoder.community.entity.User;
 import com.nowcoder.community.service.UserService;
 import com.nowcoder.community.util.CommunityUtil;
@@ -47,6 +48,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @LoginRequired
     @RequestMapping(path = "/setting", method = RequestMethod.GET)
     public String getSettingPage() {
         return "/site/setting";
@@ -54,6 +56,7 @@ public class UserController {
 
     // Spring MVC：通过 MultipartFile 处理上传文件
     // MultipartFile是Spring MVC的对象, 在表现层处理文件存储, 防止表现层与业务层耦合
+    @LoginRequired
     @RequestMapping(path = "/upload", method = RequestMethod.POST)
     public String uploadHeader(MultipartFile headerImage, Model model) {
         if (headerImage == null) {
@@ -112,14 +115,10 @@ public class UserController {
         }
     }
 
+    @LoginRequired
     @RequestMapping(path = "/modifyPassword", method = RequestMethod.POST)
     public String modifyPassword(String oldPassword, String newPassword, Model model) {
         User user = hostHolder.getUser();
-        // 应该不需要判断当前用户不存在吧, 修改密码的页面应该登录了才能访问
-        // hostholder是根据cookie生成的, 防止cookie中ticket被删除
-        if (user == null) {
-            return "redirect:/login";
-        }
         Map<String, Object> map = userService.updatePassword(hostHolder.getUser().getId(), oldPassword, newPassword);
         if (map.containsKey("passwordMsg")) {
             model.addAttribute("passwordMsg", map.get("passwordMsg"));
