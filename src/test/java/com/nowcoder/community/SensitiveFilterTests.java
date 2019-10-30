@@ -22,7 +22,7 @@ public class SensitiveFilterTests {
 
     @Test
     public void testSensitiveFilter() {
-        String text = "你好, ♥找♥小♥姐♥就找我, 澳门赌场赌博, 美女荷官在线发牌";
+        String text = "色";
         text = sensitiveFilter.filter(text);
         System.out.println(text);
     }

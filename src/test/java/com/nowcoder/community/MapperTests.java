@@ -81,6 +81,15 @@ public class MapperTests {
     }
 
     @Test
+    public void testInsertDiscussPost() {
+        DiscussPost discussPost = new DiscussPost();
+        discussPost.setUserId(11111);
+        discussPost.setTitle("huqihh");
+        discussPost.setContent("nihk");
+        discussPostMapper.insertDiscussPost(discussPost);
+    }
+
+    @Test
     public void testInsertLoginTicket() {
         LoginTicket loginTicket = new LoginTicket();
         loginTicket.setUserId(1);
