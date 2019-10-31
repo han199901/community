@@ -8,6 +8,7 @@ import java.util.Date;
  */
 public class DiscussPost {
 
+    private int id;
     private int userId;
     private String title;
     private String content;
@@ -16,6 +17,14 @@ public class DiscussPost {
     private Date createTime;
     private int commentCount;
     private double score;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public int getUserId() {
         return userId;
@@ -84,7 +93,8 @@ public class DiscussPost {
     @Override
     public String toString() {
         return "DiscussPost{" +
-                "userId=" + userId +
+                "id=" + id +
+                ", userId=" + userId +
                 ", title='" + title + '\'' +
                 ", content='" + content + '\'' +
                 ", type=" + type +

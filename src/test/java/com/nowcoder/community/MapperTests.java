@@ -90,6 +90,11 @@ public class MapperTests {
     }
 
     @Test
+    public void testSelectDiscussPostById() {
+        System.out.println(discussPostMapper.selectDiscussPostById(285));
+    }
+
+    @Test
     public void testInsertLoginTicket() {
         LoginTicket loginTicket = new LoginTicket();
         loginTicket.setUserId(1);
