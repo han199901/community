@@ -100,6 +100,12 @@ public class MapperTests {
     }
 
     @Test
+    public void testUpdateCommentCount() {
+        discussPostMapper.updateCommentCount(109, 200);
+        System.out.println(discussPostMapper.selectDiscussPostById(109));
+    }
+
+    @Test
     public void testInsertLoginTicket() {
         LoginTicket loginTicket = new LoginTicket();
         loginTicket.setUserId(1);
@@ -134,6 +140,20 @@ public class MapperTests {
     @Test
     public void testSelectCountByEntity() {
         System.out.println(commentMapper.selectCountByEntity(1, 280));
+    }
+
+    @Test
+    public void testInsertComment() {
+        Comment comment = new Comment();
+        comment.setUserId(1);
+        comment.setEntityType(1);
+        comment.setEntityId(1);
+        comment.setTargetId(1);
+        comment.setContent("nihk");
+        comment.setStatus(1);
+        comment.setCreateTime(new Date());
+        commentMapper.insertComment(comment);
+        System.out.println(comment);
     }
 
 }
