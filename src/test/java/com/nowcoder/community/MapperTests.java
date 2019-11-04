@@ -9,6 +9,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -170,6 +171,23 @@ public class MapperTests {
         System.out.println(messageMapper.selectLetterCount("111_138"));
 
         System.out.println(messageMapper.selectLetterUnreadCount(111, null));
+    }
+
+    @Test
+    public void testInsertMessage() {
+        Message message = new Message();
+        message.setContent("你好啊, 古久寒");
+        message.setFromId(1);
+        message.setToId(2);
+        message.setConversationId("1_2");
+        message.setCreateTime(new Date());
+        message.setStatus(0);
+        messageMapper.insertMessage(message);
+    }
+
+    @Test
+    public void testUpdateMessageStatus() {
+        messageMapper.updateStatus(Arrays.asList(355), 2);
     }
 
 }

@@ -66,7 +66,7 @@
 					<!-- 选项 -->
 					<ul class="nav nav-tabs mb-3">
 						<li class="nav-item">
-							<a class="nav-link position-relative active" th:href="@{/letter/list}">朋友私信<span class="badge badge-danger">3</span></a>
+							<a class="nav-link position-relative active" th:href="@{/letter/list}">朋友私信<span class="badge badge-danger" th:text="${letterUnreadCount}" th:if="${letterUnreadCount!=0}">3</span></a>
 						</li>
 						<li class="nav-item">
 							<a class="nav-link position-relative" href="notice.html">系统通知<span class="badge badge-danger">27</span></a>
@@ -120,7 +120,7 @@
 				<!-- 私信列表 -->
 				<ul class="list-unstyled">
 					<li class="media pb-3 pt-3 mb-3 border-bottom position-relative" th:each="conversationVo:${conversationVoList}">
-						<span class="badge badge-danger" th:text="${conversationVo.unreadCount}" th:if="${conversationVo.unreadCount!=0}">3</span>
+						<span class="badge badge-danger" th:text="${conversationVo.unreadCount}" th:if="${conversationVo.unreadCount!=0}">4</span>
 						<a href="profile.html">
 							<img th:src="${conversationVo.target.headerUrl}" class="mr-4 rounded-circle user-header" alt="用户头像" >
 						</a>
