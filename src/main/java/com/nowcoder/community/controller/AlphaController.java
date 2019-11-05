@@ -15,6 +15,7 @@ public class AlphaController {
     @RequestMapping("/hello")
     @ResponseBody
     public String sayHello() {
+        Integer.valueOf("abc"); // 500, 服务端报错
         return "hello springboot";
     }
 
