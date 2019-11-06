@@ -21,6 +21,7 @@ public class ExceptionAdvice {
 
     private static final Logger logger = LoggerFactory.getLogger(ExceptionAdvice.class);
 
+    // 处理所有异常
     @ExceptionHandler({Exception.class})
     public void handleException(Exception e, HttpServletRequest request, HttpServletResponse response) throws IOException {
         logger.error("服务器发生异常: " + e.getMessage());
@@ -28,6 +29,7 @@ public class ExceptionAdvice {
             logger.error(element.toString());
         }
 
+        // 区别处理普通请求和异步请求
         String xRequestedWith = request.getHeader("x-requested-with");
         if ("XMLHttpRequest".equals(xRequestedWith)) {
             response.setContentType("application/plain;charset=utf-8");
