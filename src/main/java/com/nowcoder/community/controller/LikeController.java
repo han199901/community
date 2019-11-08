@@ -29,11 +29,11 @@ public class LikeController {
     // 点赞功能是异步请求
     @RequestMapping(path = "/like", method = RequestMethod.POST)
     @ResponseBody
-    public String like(int entityType, int entityId) {
+    public String like(int entityType, int entityId, int entityUserId) {
         User user = hostHolder.getUser();
 
         // 点赞
-        likeService.like(user.getId(), entityType, entityId);
+        likeService.like(user.getId(), entityType, entityId, entityUserId);
         // 点赞实体的总点赞数量
         long likeCount = likeService.getEntityLikeCount(entityType, entityId);
         // 当前用户对点赞实体的状态(已赞或者未赞, 重复点赞 == 取消点赞)
