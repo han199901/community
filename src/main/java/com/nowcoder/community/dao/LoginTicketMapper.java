@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
  */
 @Mapper
 @Repository
+@Deprecated
 public interface LoginTicketMapper {
 
     String TABLE_NAME = " login_ticket ";
