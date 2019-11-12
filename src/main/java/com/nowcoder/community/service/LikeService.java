@@ -19,12 +19,12 @@ public class LikeService {
     private RedisTemplate redisTemplate;
 
     // 点赞
-    public void like(int userId, int entityType, int entityId, int entityUserId) {
+    public void like(int userId, int entityType, int entityId, int entityOwnerId) {
         redisTemplate.execute(new SessionCallback() {
             @Override
             public Object execute(RedisOperations redisOperations) throws DataAccessException {
                 String entityLikeKey  = RedisKeyUtil.getEntityLikeKey(entityType, entityId);
-                String userLikeKey = RedisKeyUtil.getUserLikeKey(entityUserId);
+                String userLikeKey = RedisKeyUtil.getUserLikeKey(entityOwnerId);
 
                 // 将查询写在redis事务之中不会立刻得到结果(redis事务, 所有事务中的操作统一加入队列里, 提交事务时统一提交)
                 boolean isLike = redisOperations.opsForSet().isMember(entityLikeKey, userId);

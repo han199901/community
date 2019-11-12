@@ -35,4 +35,10 @@
         values(#{userId},#{entityType},#{entityId},#{targetId},#{content},#{status},#{createTime})
     </insert>
 
+    <select id="selectCommentById" resultType="Comment">
+        select count(id)
+        from comment
+        where id = #{commentId}
+    </select>
+
 </mapper>
