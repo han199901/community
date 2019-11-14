@@ -36,7 +36,7 @@ public class ServiceAspect {
     public void before(JoinPoint joinPoint) {
         // 用户[1.2.3.4], 在[xxx], 访问了[com.nowcoder.community.service.xxx()].
         ServletRequestAttributes attributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
-        if (attributes == null) {
+        if (attributes == null) { // eventconsumer调用service时, attributes中没有request
             return;
         }
         HttpServletRequest request = attributes.getRequest();

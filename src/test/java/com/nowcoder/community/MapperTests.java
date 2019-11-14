@@ -2,6 +2,7 @@ package com.nowcoder.community;
 
 import com.nowcoder.community.dao.*;
 import com.nowcoder.community.entity.*;
+import com.nowcoder.community.util.CommunityConstant;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,7 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @ContextConfiguration(classes = CommunityApplication.class)
-public class MapperTests {
+public class MapperTests implements CommunityConstant {
 
     @Autowired
     private UserMapper userMapper;
@@ -188,6 +189,12 @@ public class MapperTests {
     @Test
     public void testUpdateMessageStatus() {
         messageMapper.updateStatus(Arrays.asList(355), 2);
+    }
+
+    @Test
+    public void testSelectLatestNotice() {
+        Message notice = messageMapper.selectLatestNotice(111, TOPIC_FOLLOW);
+        System.out.println(notice);
     }
 
 }
