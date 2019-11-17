@@ -93,7 +93,7 @@
         )
     </select>
 
-    <select id="selectLatestNotice" resultType="int">
+    <select id="selectNoticeCount" resultType="int">
         select count(id) from message
             where status != 2
             and from_id = 1
