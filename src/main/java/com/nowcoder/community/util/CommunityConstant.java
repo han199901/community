@@ -42,6 +42,9 @@ public interface CommunityConstant {
     // kafka主题: 发帖
     String TOPIC_PUBLISH = "publish";
 
+    // kafka主题: 删帖
+    String TOPIC_DELETE = "delete";
+
     // 系统用户ID
     int SYSTEM_USER_ID = 1;
 

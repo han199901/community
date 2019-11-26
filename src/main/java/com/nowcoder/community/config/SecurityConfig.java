@@ -43,8 +43,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Comm
                         "/letter/**",
                         "/notice/**",
                         "/like",
-                        "follow",
-                        "unfollow"
+                        "/follow",
+                        "/unfollow"
                 )
                 // 对于以上路径, 拥有以下权限即可访问
                 .hasAnyAuthority(
@@ -52,6 +52,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Comm
                         AUTHORITY_ADMIN,
                         AUTHORITY_MODERATOR
 
+                )
+                .antMatchers(
+                        "/discussPost/top",
+                        "/discussPost/good"
+                )
+                .hasAnyAuthority(
+                        AUTHORITY_MODERATOR
+                )
+                // 路径前要加/, 我说咋老锁不住, 干
+                .antMatchers(
+                        "/discussPost/delete"
+                )
+                .hasAnyAuthority(
+                        AUTHORITY_ADMIN
                 )
                 // 除了以上路径, 其他所有路径所有权限都可以访问
                 .anyRequest().permitAll()
