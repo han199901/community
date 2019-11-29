@@ -62,7 +62,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements Comm
                 )
                 // 路径前要加/, 我说咋老锁不住, 干
                 .antMatchers(
-                        "/discussPost/delete"
+                        "/discussPost/delete",
+                        "/data/**"
                 )
                 .hasAnyAuthority(
                         AUTHORITY_ADMIN
