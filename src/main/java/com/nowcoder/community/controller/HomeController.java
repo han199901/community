@@ -12,6 +12,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,13 +36,14 @@ public class HomeController implements CommunityConstant {
     private LikeService likeService;
 
     @RequestMapping(path = "/index", method = RequestMethod.GET)
-    public String getIndexPage(Model model, Page page) {
+    public String getIndexPage(Model model, Page page,
+                               @RequestParam(name = "orderMode", defaultValue = "0") int orderMode) {
         // 方法调用前, SpringMVC会自动实例化Model和Page, 并将Page注入Model
         // 所以在thymeleaf中可以直接访问Page对象中的数据
         page.setRows(discussPostService.getDiscussPostRows(0));
-        page.setPath("/index");
+        page.setPath("/index?orderMode=" + orderMode);
 
-        List<DiscussPost> list = discussPostService.getDiscussPosts(0, page.getOffset(), page.getLimit());
+        List<DiscussPost> list = discussPostService.getDiscussPosts(0, page.getOffset(), page.getLimit(), orderMode);
         List<Map<String, Object>> discussPosts = new ArrayList<>();
         if (list != null) {
             for (DiscussPost discussPost : list) {
@@ -55,6 +57,8 @@ public class HomeController implements CommunityConstant {
             }
         }
         model.addAttribute("discussPosts", discussPosts);
+        model.addAttribute("orderMode", orderMode); // 用于最热标签的样式显示选中样式
+
         return "/index";
     }
 
