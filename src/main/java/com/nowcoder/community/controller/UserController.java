@@ -110,8 +110,8 @@ public class UserController implements CommunityConstant {
         // 响应图片
         response.setContentType("image/" + suffix);
         try (
-            FileInputStream fis = new FileInputStream(fileName);
-            OutputStream os = response.getOutputStream();
+                FileInputStream fis = new FileInputStream(fileName);
+                OutputStream os = response.getOutputStream();
         ) {
             // 建立缓冲区, 一批一批输出, 提高效率
             byte[] buffer = new byte[1024];
