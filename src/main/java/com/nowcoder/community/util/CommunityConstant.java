@@ -1,7 +1,7 @@
 package com.nowcoder.community.util;
 
 /**
- * @author qhhu
+ * @author han
  * @date 2019/10/22 - 19:10
  */
 public interface CommunityConstant {

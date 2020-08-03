@@ -1,7 +1,7 @@
 package com.nowcoder.community.util;
 
 /**
- * @author qhhu
+ * @author han
  * @date 2019/11/7 - 20:10
  */
 public class RedisKeyUtil {

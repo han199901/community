@@ -4,7 +4,7 @@ import com.nowcoder.community.entity.User;
 import org.springframework.stereotype.Component;
 
 /**
- * @author qhhu
+ * @author han
  * @date 2019/10/27 - 13:16
  *
  * 持有用户信息, 用于代替session对象

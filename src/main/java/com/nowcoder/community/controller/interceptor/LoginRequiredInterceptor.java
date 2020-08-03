@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
 
 /**
- * @author qhhu
+ * @author han
  * @date 2019/10/27 - 22:47
  *
  * 在方法前标注自定义注解, 拦截所有请求，只处理带有该注解的方法

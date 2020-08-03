@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.annotations.FieldType;
 import java.util.Date;
 
 /**
- * @author qhhu
+ * @author han
  * @date 2019/10/19 - 22:36
  */
 @Document(indexName = "discusspost", type = "_doc", shards = 6, replicas = 3)

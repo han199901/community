@@ -8,7 +8,7 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * @author qhhu
+ * @author han
  * @date 2019/10/22 - 15:53
  */
 public class CommunityUtil {

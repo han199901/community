@@ -1,7 +1,7 @@
 package com.nowcoder.community.entity;
 
 /**
- * @author qhhu
+ * @author han
  * @date 2019/10/20 - 16:11
  *
  * 封装分页相关信息

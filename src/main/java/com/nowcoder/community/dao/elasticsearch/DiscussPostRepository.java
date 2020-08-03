@@ -5,7 +5,7 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
 import org.springframework.stereotype.Repository;
 
 /**
- * @author qhhu
+ * @author han
  * @date 2019/11/17 - 13:27
  */
 @Repository

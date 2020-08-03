@@ -12,7 +12,7 @@ import javax.mail.MessagingException;
 import javax.mail.internet.MimeMessage;
 
 /**
- * @author qhhu
+ * @author han
  * @date 2019/10/21 - 19:08
  */
 @Component

@@ -9,7 +9,7 @@ import org.springframework.scheduling.quartz.JobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SimpleTriggerFactoryBean;
 
 /**
- * @author qhhu
+ * @author han
  * @date 2019/12/1 - 21:57
  */
 // 配置 -> 数据库 -> 调用

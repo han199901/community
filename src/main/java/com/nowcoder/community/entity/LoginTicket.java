@@ -3,7 +3,7 @@ package com.nowcoder.community.entity;
 import java.util.Date;
 
 /**
- * @author qhhu
+ * @author han
  * @date 2019/10/26 - 12:39
  */
 public class LoginTicket {

@@ -20,7 +20,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * @author qhhu
+ * @author han
  * @date 2019/12/1 - 21:31
  */
 public class PostScoreRefreshJob implements Job, CommunityConstant {

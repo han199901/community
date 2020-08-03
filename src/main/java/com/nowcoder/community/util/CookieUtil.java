@@ -4,7 +4,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 
 /**
- * @author qhhu
+ * @author han
  * @date 2019/10/27 - 13:05
  */
 public class CookieUtil {
